@@ -645,11 +645,17 @@ select {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .block {
   display: block;
 }
 .flex {
   display: flex;
+}
+.hidden {
+  display: none;
 }
 .h-12 {
   height: 3rem;
@@ -672,6 +678,9 @@ select {
 .max-w-sm {
   max-width: 24rem;
 }
+.max-w-screen-sm {
+  max-width: 640px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -693,6 +702,9 @@ select {
 }
 .gap-y-4 {
   row-gap: 1rem;
+}
+.overflow-x-auto {
+  overflow-x: auto;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -744,8 +756,19 @@ select {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .font-bold {
   font-weight: 700;
+}
+.font-medium {
+  font-weight: 500;
 }
 .text-slate-300 {
   --tw-text-opacity: 1;
@@ -758,4 +781,23 @@ select {
 .text-slate-200 {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+.text-slate-600 {
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+@media (min-width: 768px) {
+
+  .md\:w-auto {
+    width: auto;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
