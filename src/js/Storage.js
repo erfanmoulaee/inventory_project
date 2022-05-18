@@ -63,16 +63,16 @@ export default class Storage {
     localStorage.setItem("category", JSON.stringify(savedCategories));
   }
   static getAllProducts() {
-    const saveProducts = JSON.parse(localStorage.getItem("products") || []);
-    return savedCategories.sort((a, b) => {
+    const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+    return savedProducts.sort((a, b) => {
       return new Date(a.cratedAt) > new Date(b.cratedAt) ? -1 : 1;
     });
   }
   static saveProducts(productToSave) {
-    const saveProducts = Storage.getAllProducts();
+    const savedProducts = Storage.getAllProducts();
     //edit ==> ... save
     //new ==> ... save
-    const existedItem = saveProducts.find((c) => c.id === productToSave.id);
+    const existedItem = savedProducts.find((c) => c.id === productToSave.id);
     if (existedItem) {
       //edit
       existedItem.title = productToSave.title;
@@ -82,8 +82,8 @@ export default class Storage {
       //new
       productToSave.id = new Date().getTime();
       productToSave.cratedAt = new Date().toISOString();
-      saveProducts.push(productToSave);
+      savedProducts.push(productToSave);
     }
-    localStorage.setItem("products", JSON.stringify(saveProducts));
+    localStorage.setItem("products", JSON.stringify(savedProducts));
   }
 }
